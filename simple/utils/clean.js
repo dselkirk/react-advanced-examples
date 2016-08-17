@@ -6,9 +6,6 @@ var path = require('path');
 // Remove generated css and js files to escape side-effects
 var del = require('delete');
 
-// Module colors (https://github.com/marak/colors.js/) just for UX
-var colors = require('colors');
-
 // Settings
 var publicFolder = 'public';
 var filesToDelete = ['style.css', 'bundle.js'];
@@ -24,5 +21,5 @@ del(pathsToFiles, function(err) {
     return publicFolder + '/' + file;
   }).join(', ');
 
-  console.log(('Successfully deletedFiles: ' + deletedFiles).green.bold);
+  console.log(('Successfully deletedFiles: ' + deletedFiles));
 });
